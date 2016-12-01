@@ -1,4 +1,32 @@
 #!/usr/bin/env node
-import fs from 'fs';
+const fs = require('fs');
+const path = require('path');
+const __extend = require('lodash/extend');
+const defaultConfig = JSON.parse(fs.readFileSync(__dirname + '/.testsconfig', 'utf8'));
 const config = JSON.parse(fs.readFileSync('.testsconfig', 'utf8'));
-console.log('config', config);
+const finalConfig = __extend(defaultConfig, config || {});
+
+// configs
+finalConfig.webpack = {
+	module: {
+			loaders: [{
+				test: /\.js$/,
+				loader: 'babel-loader'
+			}, {
+				test: /\.html$/,
+				loader: 'html'
+			}]
+	}
+};
+finalConfig.webpackMiddleware = {
+	stats: 'minimal',
+	noInfo: true
+};
+
+// start and run server
+const Server = require('karma').Server
+const server = new Server(finalConfig, function(exitCode) {
+	console.log('Karma has exited with ' + exitCode)
+	process.exit(exitCode)
+});
+server.start();
