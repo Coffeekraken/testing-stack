@@ -1,6 +1,6 @@
 import __settings from './settings';
-import __lodash from 'lodash';
+import __extend from 'lodash/extend';
 
 export default function setup(settings) {
-	__lodash.extend(__settings, settings);
+	__extend(__settings, settings);
 }
