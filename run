@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import fs from 'fs';
+const config = JSON.parse(fs.readFileSync('.testsconfig', 'utf8'));
+console.log('config', config);

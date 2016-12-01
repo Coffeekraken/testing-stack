@@ -5,5 +5,4 @@ const api = {
 	setup : __setup,
 	mocha : __mochaApi
 };
-
 export default api;
