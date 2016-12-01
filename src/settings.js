@@ -1,3 +1,4 @@
-export default {
+let settings = {
   basePath : '../'
 };
+export default settings;
