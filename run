@@ -19,7 +19,8 @@ const finalConfig = __merge({}, defaultConfig, config || {}, {
 			},
 			node: {
 				fs: "empty"
-			}
+			},
+			plugins : ["transform-remove-strict-mode"]
 		},
 		webpackMiddleware: {
 			stats: 'minimal',
