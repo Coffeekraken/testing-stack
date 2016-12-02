@@ -1,32 +1,37 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const __extend = require('lodash/extend');
+const __merge = require('lodash/merge');
 const defaultConfig = JSON.parse(fs.readFileSync(__dirname + '/.testsconfig', 'utf8'));
 const config = JSON.parse(fs.readFileSync('.testsconfig', 'utf8'));
-const finalConfig = __extend(defaultConfig, config || {});
-
 // configs
-finalConfig.webpack = {
-	module: {
-			loaders: [{
-				test: /\.js$/,
-				loader: 'babel-loader'
-			}, {
-				test: /\.html$/,
-				loader: 'html'
-			}]
+const finalConfig = __merge({}, defaultConfig, config || {}, {
+	karma: {
+		webpack: {
+			module: {
+					loaders: [{
+						test: /\.js$/,
+						loader: 'babel-loader'
+					}, {
+						test: /\.html$/,
+						loader: 'html'
+					}]
+			},
+		},
+		webpackMiddleware: {
+			stats: 'minimal',
+			noInfo: true
+		}
 	}
-};
-finalConfig.webpackMiddleware = {
-	stats: 'minimal',
-	noInfo: true
-};
-
-// start and run server
-const Server = require('karma').Server
-const server = new Server(finalConfig, function(exitCode) {
-	console.log('Karma has exited with ' + exitCode)
-	process.exit(exitCode)
 });
-server.start();
+
+// karma
+if (finalConfig.karma.files.length) {
+	// start and run server
+	const Server = require('karma').Server
+	const server = new Server(finalConfig.karma, function(exitCode) {
+		console.log('All done folks! exit(' + exitCode + ')');
+		process.exit(exitCode);
+	});
+	server.start();
+}
