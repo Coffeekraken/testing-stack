@@ -1,4 +1,4 @@
 let env = {
-	isMocha : window.mocha !== undefined
-}
+	mocha : window.mocha
+};
 export default env;
