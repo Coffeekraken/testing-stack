@@ -17,6 +17,9 @@ const finalConfig = __merge({}, defaultConfig, config || {}, {
 						loader: 'html'
 					}]
 			},
+			node: {
+				fs: "empty"
+			}
 		},
 		webpackMiddleware: {
 			stats: 'minimal',
