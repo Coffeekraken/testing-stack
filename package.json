@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Package that expose some high level testing api",
   "main": "dist/index.js",
+  "bin": {
+    "coffeekraken-testing-stack" : "./run"
+  },
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
