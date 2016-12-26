@@ -2,8 +2,14 @@
 const fs = require('fs');
 const path = require('path');
 const __merge = require('lodash/merge');
-const defaultConfig = JSON.parse(fs.readFileSync(__dirname + '/.testsconfig', 'utf8'));
-const config = JSON.parse(fs.readFileSync('.testsconfig', 'utf8'));
+
+// extend config
+const defaultConfig = require(__dirname + '/tests.config.js');
+let config = {};
+if (fs.existsSync(process.env.PWD + '/tests.config.js')) {
+	config = require(process.env.PWD + '/tests.config.js');
+}
+
 // configs
 const finalConfig = __merge({}, defaultConfig, config || {}, {
 	karma: {
