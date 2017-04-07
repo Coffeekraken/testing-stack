@@ -12,6 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function run() {
 	if (_env2.default.mocha) return;
 	setTimeout(function () {
+		console.log('run');
 		mocha.run();
 	});
 }

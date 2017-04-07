@@ -1,4 +1,29 @@
-# Testing Stack
+# Testing Stack <img src="/.resources/coffeekraken-logo.jpg" height="25px" />
+
+<p>
+	<a href="https://travis-ci.org/Coffeekraken/testing-stack">
+		<img src="https://img.shields.io/travis/Coffeekraken/testing-stack.svg?style=flat-square" />
+	</a>
+	<a href="https://www.npmjs.com/package/coffeekraken-testing-stack">
+		<img src="https://img.shields.io/npm/v/coffeekraken-testing-stack.svg?style=flat-square" />
+	</a>
+	<a href="https://github.com/coffeekraken/testing-stack/blob/master/LICENSE.txt">
+		<img src="https://img.shields.io/npm/l/coffeekraken-testing-stack.svg?style=flat-square" />
+	</a>
+	<!-- <a href="https://github.com/coffeekraken/testing-stack">
+		<img src="https://img.shields.io/npm/dt/coffeekraken-testing-stack.svg?style=flat-square" />
+	</a>
+	<a href="https://github.com/coffeekraken/testing-stack">
+		<img src="https://img.shields.io/github/forks/coffeekraken/testing-stack.svg?style=social&label=Fork&style=flat-square" />
+	</a>
+	<a href="https://github.com/coffeekraken/testing-stack">
+		<img src="https://img.shields.io/github/stars/coffeekraken/testing-stack.svg?style=social&label=Star&style=flat-square" />
+	</a>-->
+	<a href="https://twitter.com/coffeekrakenio">
+		<img src="https://img.shields.io/twitter/url/http/coffeekrakenio.svg?style=social&style=flat-square" />
+	</a>
+</p>
+
 
 The purpose of this package is to provide a high level API for unit, BDD, performance, etc testing. His goal is to simplify your life by installing all the dependencies needed, let you just write your tests and run them without headache.
 

@@ -3,7 +3,7 @@ module.exports = {
 		"basePath": "",
 		"frameworks": ["mocha"],
 		"files": [
-			"tests/dist/*.js"
+			"tests/*.js"
 		],
 		"exclude": [
 		],
