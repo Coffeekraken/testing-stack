@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-testing-stack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Package that expose some high level testing api",
   "main": "dist/index.js",
   "bin": {
