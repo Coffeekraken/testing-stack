@@ -46,7 +46,7 @@ Set your test script in your ```package.json``` file like this
 ```json
 {
 	"scripts" : {
-		"test" : "node_modules/coffeekraken-testing-stack/run"
+		"test" : "coffeekraken-testing-stack"
 	}
 }
 ```
