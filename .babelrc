@@ -1,5 +1,5 @@
 {
-	"presets": [["@babel/preset-env", {
+	"presets": [["env", {
 		"targets": {
 			"browsers": [
 				"Chrome >= 52",
@@ -11,6 +11,8 @@
 		}
   }]],
   "plugins": [
-    "transform-class-properties"
+    "transform-class-properties",
+		"transform-object-rest-spread",
+		"transform-export-default"
   ]
 }
